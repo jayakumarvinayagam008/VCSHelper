@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VCSHelper.Views.UserActivationView"
+             xmlns:viewModelBase="clr-namespace:VCSHelper.ViewModels.Base; assembly=VCSHelper"
+             viewModelBase:ViewModelLocator.AutoWireViewModel="true">
+    <ContentPage.Content>
+        <StackLayout
+            Padding="30"
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
+            <Label Text="Activation security code shared to you, would you please enter the security code to enable VCS service" />
+            <Entry Keyboard="Numeric" 
+                   Placeholder="Enter security code"
+                   Text="{Binding ActivationKey.Value, Mode=TwoWay}"/>
+            <Button Text="Activate"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand"
+                    Command="{Binding ActivateCommand}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

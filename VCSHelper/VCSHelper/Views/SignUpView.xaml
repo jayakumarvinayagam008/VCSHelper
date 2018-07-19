@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VCSHelper.Views.SignUpView"
+             xmlns:viewModelBase="clr-namespace:VCSHelper.ViewModels.Base; assembly=VCSHelper"
+             viewModelBase:ViewModelLocator.AutoWireViewModel="true">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center">
+                <Label Text="VCS Help"/>
+            </StackLayout>
+            <StackLayout Padding="30">
+            <Entry Placeholder="First Name" Keyboard="Text"
+                   Text="{Binding FirstName.Value, Mode=TwoWay}"/>
+
+            <Entry Placeholder="Last Name" Keyboard="Text"
+                   Text="{Binding LastName.Value, Mode=TwoWay}"/>
+
+            <Entry Placeholder="Email" Keyboard="Email"
+                   Text="{Binding Email.Value, Mode=TwoWay}"/>
+
+            <Entry Placeholder="Phone" Keyboard="Numeric"
+                  Text="{Binding PhoneNumber.Value, Mode=TwoWay}"/>
+
+            <Entry Placeholder="Password" IsPassword="true"
+                   Text="{Binding Password.Value, Mode=TwoWay}"/>
+            </StackLayout>
+            <StackLayout
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                 Orientation="Horizontal" >
+                <Button Text="Create" 
+                        VerticalOptions="Fill"
+                        HorizontalOptions="Fill"
+                        BackgroundColor="{StaticResource DarkGreenColor}"
+                        Command="{Binding CreateCommand}"/>
+                <Button Text="Cancel" VerticalOptions="Fill"
+                        BackgroundColor="{StaticResource DarkGreenColor}"
+                        Command="{Binding CancelCommand}"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

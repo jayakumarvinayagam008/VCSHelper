@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VCSHelper.Views.LoginView"
+             xmlns:viewModelBase="clr-namespace:VCSHelper.ViewModels.Base; assembly=VCSHelper"
+             viewModelBase:ViewModelLocator.AutoWireViewModel="true">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center">
+                <Label Text="VCS Help"/>
+            </StackLayout>
+            <StackLayout                
+                Padding="30">
+                <Entry Placeholder="Email or Phone number" Text="{Binding UserName.Value, Mode=TwoWay}" />
+                <Entry Placeholder="Password" IsPassword="True" Text="{Binding Password.Value, Mode=TwoWay}" />
+                <Button Text="Login" BackgroundColor="{StaticResource DarkGreenColor}" Command="{Binding SignInCommand}" />            
+            </StackLayout>
+            <StackLayout
+                Orientation="Horizontal"
+                VerticalOptions="EndAndExpand"
+                HorizontalOptions="Start">
+                <Button Text="Forgot password" Command="{Binding ForgotPasswordCommand}" />
+                <Button Text="Sign up for New Account" Command="{Binding SignUpCommand}" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
